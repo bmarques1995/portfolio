@@ -43,6 +43,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  //'dark:text-black dark:bg-white light:text-white light:bg-black'
   return (
     <html
       lang="en"
