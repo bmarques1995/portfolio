@@ -54,7 +54,9 @@ function RoundedImage(props) {
 
 function Code({ children, ...props }) {
   //let codeHTML = highlight(children, props.className)
-  return (<CodeBlock code={children} language={props.className}/>);
+  return (
+    <CodeBlock code={children} language={props.className}/>
+  );
 }
 
 function slugify(str) {
@@ -91,6 +93,7 @@ function createHeading(level) {
 }
 
 let components = {
+  code: Code,
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
@@ -100,7 +103,6 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   p: Paragraph,
-  code: Code,
   Table,
 }
 
