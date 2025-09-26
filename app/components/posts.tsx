@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { getBlogPosts } from 'app/blog/utils'
+import { formatDate } from 'app/shared/mdx_reader'
 
 export function BlogPosts() {
-  let allBlogs = getBlogPosts()
+  let allBlogs = getBlogPosts();
 
   return (
     <div>

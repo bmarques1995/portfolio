@@ -1,3 +1,4 @@
+import "prismjs/themes/prism-tomorrow.css"; 
 import './global.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'

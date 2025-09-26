@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { highlight } from 'sugar-high'
 import React from 'react'
+import CodeBlock from './prismCode';
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -24,6 +24,10 @@ function Table({ data }) {
       <tbody>{rows}</tbody>
     </table>
   )
+}
+
+function Paragraph(props) {
+  return <p className="text-justify indent-8" {...props} />
 }
 
 function CustomLink(props) {
@@ -49,8 +53,8 @@ function RoundedImage(props) {
 }
 
 function Code({ children, ...props }) {
-  let codeHTML = highlight(children)
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
+  //let codeHTML = highlight(children, props.className)
+  return (<CodeBlock code={children} language={props.className}/>);
 }
 
 function slugify(str) {
@@ -95,6 +99,7 @@ let components = {
   h6: createHeading(6),
   Image: RoundedImage,
   a: CustomLink,
+  p: Paragraph,
   code: Code,
   Table,
 }
