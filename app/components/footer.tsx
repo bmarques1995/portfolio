@@ -1,3 +1,4 @@
+"use client";
 function ArrowIcon() {
   return (
     <svg
